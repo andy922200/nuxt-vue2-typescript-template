@@ -10,7 +10,8 @@ import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
 import 'dayjs/locale/en'
 import 'dayjs/locale/zh-tw'
 import 'dayjs/locale/zh-cn'
-import 'dayjs/locale/th'
+import 'dayjs/locale/ja'
+import 'dayjs/locale/de'
 
 dayjs.extend(utc)
 dayjs.extend(duration)
@@ -20,10 +21,8 @@ dayjs.extend(localizedFormat)
 dayjs.extend(timezone)
 dayjs.extend(isSameOrAfter)
 
-export const changeToLocaleTime = function ({ time, lang, timezoneOffset, format }: { time: string, lang: string, timezoneOffset: number, format: string }): string {
-    return dayjs(time).add(timezoneOffset, 'minute').locale(`${lang}`).format('LL LTS')
-}
+export default dayjs
 
-export default ({ app }: { app: any }, inject: any) => {
-    inject('dayjs', dayjs)
+export const changeToLocaleTime = function ({ time, lang, timezoneOffset, format }: { time: string, lang: string, timezoneOffset: number, format: string }): string {
+    return dayjs(time).add(timezoneOffset, 'minute').locale(`${lang}`).format(`${format}`)
 }
