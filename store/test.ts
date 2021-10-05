@@ -1,10 +1,16 @@
 import {
     GetterTree, ActionTree, MutationTree
 } from 'vuex/types'
+import {
+    cloneDeep
+} from 'lodash-es'
 
-export const state = () => ({
+export const moduleName = 'test'
+export const stateTemplate = {
     inTestVar: 'inTestVar'
-})
+}
+
+export const state = () => (cloneDeep(stateTemplate))
 export type RootState = ReturnType<typeof state>
 
 export const getters: GetterTree<RootState, RootState> = {

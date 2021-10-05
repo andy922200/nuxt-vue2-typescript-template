@@ -1,4 +1,4 @@
-// ~/plugins/persistedState.js
+// ~/plugins/persistedState.client.js
 import createPersistedState from 'vuex-persistedstate'
 
 export default ({ app, store }:{ app:any, store:any}) => {

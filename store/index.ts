@@ -1,6 +1,9 @@
 import {
     GetterTree, ActionTree, MutationTree
 } from 'vuex/types'
+import {
+    cloneDeep
+} from 'lodash-es'
 
 // vue-i18n start
 import {
@@ -11,10 +14,11 @@ import {
 } from '~/plugins/i18n/config'
 // vue-i18n end
 
-export const state = () => ({
+export const stateTemplate = {
     selectedLanguage: defaultLocale,
     windowWidth: 0
-})
+}
+export const state = () => (cloneDeep(stateTemplate))
 export type RootState = ReturnType <typeof state>
 
 export const getters: GetterTree<RootState, RootState> = {

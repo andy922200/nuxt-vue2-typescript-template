@@ -42,7 +42,7 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         '~/plugins/i18n/i18n.ts',
-        '~/plugins/persistedState.client.ts'
+        '~/plugins/persistedState.ts'
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -67,5 +67,8 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
+        transpile: [
+            'lodash-es'
+        ]
     }
 }
