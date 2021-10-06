@@ -47,9 +47,15 @@ import dayjs, {
 
 export default Vue.extend({
     name: 'Inspire',
-    async asyncData () {
-        return {
-            time: dayjs.utc().format('YYYY-MM-DDTHH:mm:ss')
+    async asyncData ({ app }) {
+        try {
+            const barRes = await app.$module1api.bar(2)
+            console.log('barRes', barRes)
+            return {
+                time: dayjs.utc().format('YYYY-MM-DDTHH:mm:ss')
+            }
+        } catch (err) {
+            console.log(err)
         }
     },
     data () {
