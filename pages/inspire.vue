@@ -1,30 +1,36 @@
 <template>
     <section class="section">
-        <h2 class="title is-3 has-text-grey">
-            "Just start
-            <b-icon
-                icon="rocket"
-                size="is-large"
-            />"
-        </h2>
-        <h3 class="subtitle is-6 has-text-grey">
-            Author: <a href="https://github.com/anteriovieira">
-                Antério Vieira
-            </a>
-        </h3>
-        <h3>{{ $t('hello-world') }}</h3>
-        <h4> UTC Time {{ time }}</h4>
-        <h5 v-for="item in timeZoneArray" :key="item.city">
-            <p>City: {{ item.city }}</p>
-            {{ triggerChangeToLocaleTime({
-                time,
-                lang:item.locale,
-                timezoneOffset:item.offset,
-                format:item.format
-            }) }}
-        </h5>
-        <h2>selectedLanguage: {{ selectedLanguage }}</h2>
-        <h3>inTestVar: {{ inTestVar }}</h3>
+        <div class="card">
+            <div class="card-content py-6 px-8">
+                <h2 class="title is-3 has-text-grey">
+                    "Just start
+                    <b-icon
+                        icon="rocket"
+                        size="is-large"
+                    />"
+                </h2>
+                <h3 class="subtitle is-6 has-text-grey">
+                    Author: <a href="https://github.com/anteriovieira">
+                        Antério Vieira
+                    </a>
+                </h3>
+                <h3>{{ $t('hello-world') }}</h3>
+                <h4> UTC Time {{ time }}</h4>
+                <h5 v-for="item in timeZoneArray" :key="item.city" class="test">
+                    <p class="test-inner">
+                        City: {{ item.city }}
+                    </p>
+                    {{ triggerChangeToLocaleTime({
+                        time,
+                        lang:item.locale,
+                        timezoneOffset:item.offset,
+                        format:item.format
+                    }) }}
+                </h5>
+                <h2>selectedLanguage: {{ selectedLanguage }}</h2>
+                <h3>inTestVar: {{ inTestVar }}</h3>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -98,3 +104,7 @@ export default Vue.extend({
     }
 })
 </script>
+
+<style lang="scss">
+// @import '~/assets/scss/main.scss';
+</style>
