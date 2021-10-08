@@ -23,8 +23,19 @@
                 format:item.format
             }) }}
         </h5>
-        <h2>selectedLanguage: {{ selectedLanguage }}</h2>
-        <h3>inTestVar: {{ inTestVar }}</h3>
+        <h3>Vuex Module inTestVar: {{ inTestVar }}</h3>
+        <h2>selectedLanguage: {{ selectedLanguageModel }}</h2>
+        <h4>Language Dropdown</h4>
+        <b-select
+            v-model="selectedLanguageModel"
+        >
+            <option value="en-us">
+                EN-US
+            </option>
+            <option value="zh-tw">
+                ZH-TW
+            </option>
+        </b-select>
     </section>
 </template>
 
@@ -36,9 +47,15 @@ import dayjs, {
 
 export default Vue.extend({
     name: 'Inspire',
-    async asyncData () {
-        return {
-            time: dayjs.utc().format('YYYY-MM-DDTHH:mm:ss')
+    async asyncData ({ app }) {
+        try {
+            const barRes = await app.$module1api.bar(2)
+            console.log('barRes', barRes)
+            return {
+                time: dayjs.utc().format('YYYY-MM-DDTHH:mm:ss')
+            }
+        } catch (err) {
+            console.log(err)
         }
     },
     data () {
@@ -79,8 +96,14 @@ export default Vue.extend({
         }
     },
     computed: {
-        selectedLanguage ():string {
-            return this.$store.getters.selectedLanguage
+        selectedLanguageModel: {
+            get () {
+                return this.$store.getters.selectedLanguage
+            },
+            set (value:string) {
+                this.$store.dispatch('selectNewDefaultLanguage', value)
+                this.$i18n.locale = value
+            }
         },
         inTestVar ():string {
             return this.$store.getters['test/inTestVar']
@@ -98,3 +121,7 @@ export default Vue.extend({
     }
 })
 </script>
+
+<style lang="scss">
+// @import '~/assets/scss/main.scss';
+</style>

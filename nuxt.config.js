@@ -31,17 +31,28 @@ export default {
                 rel: 'icon',
                 type: 'image/x-icon',
                 href: '/favicon.ico'
+            },
+            {
+                rel: 'stylesheet',
+                href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap'
+            },
+            {
+                rel: 'stylesheet',
+                href: 'https://use.fontawesome.com/releases/v5.14.0/css/all.css'
             }
         ]
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
+        '~/assets/scss/main.scss'
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
-        '~/plugins/i18n/i18n.ts'
+        '~/plugins/i18n/i18n.ts',
+        '~/plugins/persistedState.ts',
+        '~/plugins/axios/axios.ts'
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -56,7 +67,10 @@ export default {
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
-        'nuxt-buefy',
+        // 'nuxt-buefy',
+        ['nuxt-buefy', {
+            css: false
+        }],
         '@nuxtjs/axios'
     ],
 
@@ -66,5 +80,8 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
+        transpile: [
+            'lodash-es'
+        ]
     }
 }
