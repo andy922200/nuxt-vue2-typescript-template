@@ -1,69 +1,60 @@
 # nuxt-vue2-template
 
-## Build Setup
+<p align="center">
+    <img src="./iconForReadme.png" alt="logo" width="120" height="120">
+</p>
 
-```bash
-# install dependencies
-$ npm install
+## Table of Contents
+- [About this project](#about-this-project)
+- [Prerequisites](#prerequisites)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## About this project 
+<p>This template includes the following packages:</p>
+<p>這模板整合了以下套件</p>
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+- [Vue 2](https://vuejs.org/) - The Progressive JavaScript Framework.
+- [NuxtJS](https://nuxtjs.org/) - Build your next Vue.js application with confidence using Nuxt. An open source framework making web development simple and powerful.
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript extends JavaScript by adding types.
+- [Vue I18n](https://kazupon.github.io/vue-i18n/) - Vue I18n is internationalization plugin for Vue.js
+- [Dayjs](https://day.js.org/) - Fast 2kB alternative to Moment.js with the same modern API
+- [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [Nuxt/Axios](https://axios.nuxtjs.org/) - Secure and easy Axios integration for Nuxt.
 
-# generate static project
-$ npm run generate
+## Prerequisites
+<p>請先安裝好 Node.js 環境</p>
+
+- [npm](https://www.npmjs.com/get-npm)
+- [Node.js](https://nodejs.org/en/download/)
+
+This Demo project is running on Node.js (12.20.0), NPM (6.14.9) while testing.
+
+## Clone / Download
+1. Clone this repository to your local machine
+2. Start your development :)
+
+```
+$ git clone https://github.com/andy922200/nuxt-vue2-typescript-template.git
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## Related Scripts
 
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+**1. Enter the project folder**
+```
+> Open a new terminal window and enter the folder
+$ cd <project folder>
+```
+**2. Install packages via npm**
+```
+$ npm install
+```
+**3. Compiles the webpack for development**
+```
+$ npm run dev // port:8080
+```
+**4. Fix the coding style automatically ( js / html )**
+```
+$ npm run lint
+```
+## Author
+- [Andy Lien](https://github.com/andy922200)
+- [The icon is from NuxtJS website.](https://nuxtjs.org/design/)
