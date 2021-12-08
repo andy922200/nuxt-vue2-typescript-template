@@ -12,4 +12,12 @@
       "vue",
   ],
   "vetur.validation.template": false,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ]
 }

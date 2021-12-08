@@ -17,6 +17,7 @@
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript extends JavaScript by adding types.
 - [Vue I18n](https://kazupon.github.io/vue-i18n/) - Vue I18n is internationalization plugin for Vue.js
 - [Dayjs](https://day.js.org/) - Fast 2kB alternative to Moment.js with the same modern API
+- [Stylelint](https://stylelint.io/) - A mighty, modern linter that helps you avoid errors and enforce conventions in your styles.
 - [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
 - [Nuxt/Axios](https://axios.nuxtjs.org/) - Secure and easy Axios integration for Nuxt.
 
@@ -54,6 +55,14 @@ $ npm run dev // port:8080
 **4. Fix the coding style automatically ( js / html )**
 ```
 $ npm run lint
+```
+**5. Check the css coding style**
+```
+$ npm run check-css
+```
+**6. Fix the css coding style automatically**
+```
+$ npm run format-css
 ```
 ## Author
 - [Andy Lien](https://github.com/andy922200)
